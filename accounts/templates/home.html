@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministry Website</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Emblem">
+            <div class="title">
+                <h1>छत्तीसगढ़ राज्य गौ सेवा आयोग</h1>
+                <h2>Chhattisgarh State Gauseva Aayog</h2>
+            </div>
+            <div class="login-links">
+                <a href="student_login">Student Login</a> | 
+                <a href="#">Teacher Login</a> | 
+                <a href="#">Staff Login</a>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <nav>
+        <div class="container">
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Notices</a></li>
+            <li class="dropdown">
+                <a href="#">Media &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Videos</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Acts & Rules</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Schemes</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="container">
+            <img src="{% static 'images/slider-1.jpg' %}" class="active" alt="Banner Image 1">
+            <img src="{% static 'images/slider-2.webp' %}" alt="Banner Image 2">
+            <img src="{% static 'images/slider-3.jpg' %}" alt="Banner Image 3">
+            <img src="{% static 'images/slider-4.jpg' %}" alt="Banner Image 4">
+            <div class="dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="home-section">
+        <div class="container">
+            <!-- Left Side Content -->
+            <div class="home-left">
+                <h2>WELCOME TO <span>Chhattisgarh State Gauseva Aayog</span></h2>
+                <!-- <p class="subtitle">Welcome to the website of Ministry/Department, Government of India.</p> -->
+                <p>
+                    An informative text section that outlines the work portfolio of the ministry 
+                    and the initiatives/ schemes and other useful purpose that the ministry website serves. 
+                    An informative text section that outlines the work portfolio of the ministry and the initiatives/
+                    schemes and other useful purpose that the ministry website serves.
+                </p>
+                <a href="#" class="read-more">READ MORE ></a>
+            </div>
+
+            <!-- Right Side Minister Section -->
+            <div class="home-right">
+                <div class="minister-card">
+                    <img src="{% static 'images/profile.png' %}" alt="Minister Image">
+                    <div class="minister-info">
+                        <h3>Minister Name</h3>
+                        <p class="position">Secretary</p>
+                        <!-- <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div> -->
+                        <!-- <a href="#" class="portfolio-btn">VIEW PORTFOLIO</a> -->
+                    </div>
+                </div>
+
+                <div class="minister-list">
+                    <div class="minister">
+                        <img src="{% static 'images/profile.png' %}" alt="Minister">
+                        <h4>NAME</h4>
+                        <p>Registrar</p>
+                    </div>
+                    <div class="minister">
+                        <img src="{% static 'images/profile.png' %}" alt="Minister">
+                        <h4>NAME</h4>
+                        <p>Deputy Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

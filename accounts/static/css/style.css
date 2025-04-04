@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure background covers the full page */
+body {
+    background: white;
+}
+
+/* Wrapper to constrain content within a max width */
+.container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 10px 20px; /* Adds spacing on both sides */
+}
+
+/* Header Section */
+header {
+    background: white;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Move logo to the leftmost side */
+.header-content img {
+    height: 80px;
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+/* Center the title */
+.title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.title h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 14px;
+}
+
+/* Move login links to the right */
+.login-links {
+    margin-left: auto; /* Pushes login links to the right */
+    font-size: 14px;
+}
+
+.login-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Bar */
+nav {
+    background: #d32f2f;
+    padding: 10px;
+    position: relative;
+    z-index: 1000; /* Ensures nav is above other elements */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Change background color on hover */
+nav ul li:hover {
+    background: #c00000;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #c00000;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensures dropdown appears above everything */
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #fff;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Change background color when hovering over dropdown items */
+.dropdown-menu li:hover {
+    background: #a00000;
+}
+
+/* Banner Section */
+/* .banner {
+    background: #333;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-buttons button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+} */
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome h2 span {
+    color: #8b5e18;
+    font-weight: bold;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Increased height */
+    overflow: hidden;
+}
+
+/* Ensure images fill the banner */
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Show the first image initially */
+.banner img.active {
+    opacity: 1;
+}
+
+/* Dots Navigation */
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: white; /* Active dot is fully white */
+}
+
+
+/* style for intro scetion  */
+
+.content-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Side - 70% Width */
+.left-content {
+    flex: 7;
+}
+
+.left-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.left-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Right Side - 30% Width */
+.right-content {
+    flex: 3;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* News Ticker */
+.news-ticker {
+    height: 120px; /* Visible height */
+    overflow: hidden;
+    position: relative;
+}
+
+.news-ticker ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    animation: scrollUp 10s linear infinite;
+}
+
+.news-ticker li {
+    font-size: 14px;
+    padding: 10px;
+    color: #333;
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Auto-scrolling animation */
+@keyframes scrollUp {
+    0% { top: 100%; }
+    100% { top: -150%; } /* Moves up fully */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-content, .right-content {
+        flex: 100%;
+    }
+}
+
+
+.home-section {
+    padding: 50px 0;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+
+/* Left Content */
+.home-left {
+    flex: 7;
+}
+
+.home-left h2 {
+    font-size: 32px;
+    color: black;
+    font-weight: normal;
+}
+
+.home-left h2 span {
+    font-weight: bold;
+    color: #b27900;
+}
+
+.subtitle {
+    color: gray;
+    font-size: 18px;
+    border-left: 5px solid #b27900;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.home-left p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #b27900;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background: #b27900;
+    color: white;
+}
+
+/* Right Content */
+.home-right {
+    flex: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Minister Card */
+.minister-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.minister-card img {
+    width: 135px;
+    height: 154px;
+    border-radius: 5px;
+}
+
+.minister-info h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.minister-info .position {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100px;
+    height: 6px;
+    background: lightgray;
+    border-radius: 3px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: #c00000;
+    border-radius: 3px;
+}
+
+/* Portfolio Button */
+.portfolio-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.portfolio-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* Additional Ministers */
+.minister-list {
+    display: flex;
+    gap: 10px;
+    border-top: 2px solid #c00000;
+    padding-top: 15px;
+}
+
+.minister {
+    text-align: center;
+}
+
+.minister img {
+    width: 135px;
+    height: 154px;
+    border-radius: 5px;
+}
+
+.minister h4 {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.minister p {
+    font-size: 12px;
+    color: gray;
+}
+
+
