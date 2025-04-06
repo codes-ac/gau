@@ -14,72 +14,57 @@
     <div class="title">Registration</div>
     <div class="content">
       <!-- Registration form -->
-      <form method="post" action="register/student/">
+      <div id="form-error" style="color: red;"></div>
+      <form id="student-registration-form">
         {% csrf_token %}
         <div class="user-details">
           <!-- Input for Full Name -->
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name="name" required>
+            <input type="text" placeholder="Enter your name" id="name" required>
           </div>
           <!-- Input for Username -->
           <div class="input-box">
             <span class="details">Father Name</span>
-            <input type="text" placeholder="Enter your father name" name="father_name" required>
+            <input type="text" placeholder="Enter your father name" id="father_name" required>
           </div>
           <!-- Input for Email -->
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="email" placeholder="Enter your email" name="email" required>
+            <input type="email" placeholder="Enter your email" id="email" required>
           </div>
           <!-- Input for Phone Number -->
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your phone number" name="phone_number" pattern="[0-9]{10}" required>
+            <input type="text" placeholder="Enter your phone number" id="phone_number" pattern="[0-9]{10}" required>
           </div>
           <!-- Input for Password -->
           <div class="input-box">
             <span class="details">School Name</span>
-            <input type="text" placeholder="Enter your school name" name="school" required>
+            <input type="text" placeholder="Enter your school name" id="school" required>
           </div>
           <!-- Input for Confirm Password -->
           <div class="input-box">
             <span class="details">Class</span>
-            <input type="text" placeholder="Enter your class number" name="student_class" required>
+            <input type="text" placeholder="Enter your class number" id="student_class" required>
           </div>
           <div class="input-box">
             <span class="details">Roll Number</span>
-            <input type="text" placeholder="Enter your Roll No" name="roll_number" required>
+            <input type="text" placeholder="Enter your Roll No" id="roll_number" required>
           </div>
         <div class="input-box">
           <span class="details">Date of Birth</span>
-          <input type="date" placeholder="Date of Birth" name="dob" required>
+          <input type="date" placeholder="Date of Birth" id="dob" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Gender</span>
+          <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
         </div>
       </div>
-        <div class="gender-details">
-          <!-- Radio buttons for gender selection -->
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <!-- Label for Male -->
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Male</span>
-            </label>
-            <!-- Label for Female -->
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Female</span>
-            </label>
-            <!-- Label for Prefer not to say -->
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
         <!-- Submit button -->
         <div class="button">
           <button type="submit" value="Register">Submit</button>

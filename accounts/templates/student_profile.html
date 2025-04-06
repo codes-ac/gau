@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Student Profile</h2>
+    <div class="profile-card">
+      <div class="profile-row"><strong>Full Name:</strong> {{ user.name }}</div>
+      <div class="profile-row"><strong>Father Name:</strong> {{ user.father_name }}</div>
+      <div class="profile-row"><strong>Email:</strong> {{ user.email }}</div>
+      <div class="profile-row"><strong>Phone Number:</strong> {{ user.phone_number }}</div>
+      <div class="profile-row"><strong>School:</strong> {{ user.school }}</div>
+      <div class="profile-row"><strong>Class:</strong> {{ user.class_number }}</div>
+      <div class="profile-row"><strong>Roll Number:</strong> {{ user.roll_number }}</div>
+      <div class="profile-row"><strong>Date of Birth:</strong> {{ user.dob }}</div>
+      <div class="profile-row"><strong>Gender:</strong> {{ user.gender }}</div>
+      <div class="profile-row"><strong>Payment Status:</strong> {{ user.payment_status }}</div>
+
+      {% if user.payment_status == "Unpaid" %}
+      <div class="profile-row pay-now">
+        <form action="{% url 'make_payment' %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">Pay Now</button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
