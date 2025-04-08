@@ -1,4 +1,7 @@
+import openpyxl
+from django_q.tasks import schedule
 from rest_framework import generics, status
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.views import View
@@ -8,13 +11,21 @@ from django.shortcuts import render, get_object_or_404
 from .models import Student, Teacher
 from .serializers import StudentSerializer, TeacherSerializer
 
-class RegisterStudentView(generics.CreateAPIView):
+class RegisterListStudentView(generics.ListCreateAPIView):
     """
     API view for registering a new student.
     Automatically generates student_id and password.
     """
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+class StudentDetailView(generics.RetrieveAPIView):
+    """
+    API view to retrieve a single student's details by ID.
+    """
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    lookup_field = 'student_id'
 
 class LoginStudentView(APIView):
     """
@@ -50,12 +61,7 @@ class LoginTeacherView(APIView):
             return Response({"message": "Login successful", "email": teacher.email}, status=status.HTTP_200_OK)
         except Teacher.DoesNotExist:
             return Response({"error": "Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
-        
-# class StudentProfileView(DetailView):
-#     model = Student
-#     template_name = "profile.html"
-#     context_object_name = "student"
-#     pk_url_kwarg = "student_id"
+
 
 class StudentProfileView(View):
     """
