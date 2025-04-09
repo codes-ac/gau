@@ -8,8 +8,8 @@
       <meta name="format-detection" content="telephone=no" />
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
-      <link rel="icon" href="assets/images/favicon/favicon.png">
+      <link rel="apple-touch-icon" href="{% static 'assets/images/favicon/apple-touch-icon.png' %}">
+      <link rel="icon" href="{% static 'assets/images/favicon/favicon.png' %}">
       <title>Home |Ministry | Department | GoI</title>
       <!-- Custom styles for this template -->
       <link href="{% static 'assets/css/base.css' %}" rel="stylesheet" media="all">
@@ -35,9 +35,12 @@
       <noscript>
          <link href="{% static 'theme/css/no-js.css' %}" type="text/css" rel="stylesheet">
       </noscript>
+      
+      {% block css %}{% endblock css %}
    </head>
    <body>
       <div id="fb-root"></div>
+
       <header>
          <div class="region region-header-top">
             <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
@@ -45,7 +48,14 @@
                </noscript>
                <div class="wrapper common-wrapper">
                   <div class="container common-container four_content top-header">
-                     <div class="common-left clearfix">
+                     <div class="login-links common-right clearfix">
+                        <em>
+                        <a href="#">Student Login</a> | 
+                        <a href="#">Teacher Login</a> | 
+                        <a href="#">Staff Login</a>
+                        </em>
+                    </div>
+                     <!-- <div class="common-left clearfix">
                         <ul>
                            <li class="gov-india"><span class="responsive_go_hindi" lang="hi"><a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)">भारत सरकार</a></span>                           </li>
                            <li class="ministry"><span class="li_eng responsive_go_eng"><a target="_blank" href="https://india.gov.in/" title="Government of india,External Link that opens in a new window" >Government of india</a></span></li>
@@ -123,7 +133,7 @@
                               </ul>
                            </li>
                         </ul>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>
@@ -140,6 +150,7 @@
                   </em>
                   </a>
                </p>
+               
                <div class="header-right clearfix">
                   <div class="right-content clearfix">
                      <div class="float-element">
@@ -236,7 +247,7 @@
             
                     <li class="nav-item"><a href="inner.html">Grievance</a></li>
                                  
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a href="inner.html">Parliament Q & A</a>
                       <div class="sub-nav col-1">
                          <ul class="sub-nav-group ">
@@ -248,7 +259,7 @@
                    
                     <li class="nav-item"><a href="inner.html">Important Links</a></li>
             
-                    <li class="nav-item"><a href="inner.html">Contact Us</a></li>
+                    <li class="nav-item"><a href="inner.html">Contact Us</a></li> -->
             
                   </ul>
                </nav>
@@ -259,215 +270,9 @@
             </div>
          </section>
       </header>
-      <!--/.nav-wrapper-->
-      <section class="wrapper banner-wrapper">
-         <h1 style="display: none">Banner</h1>
-         <div id="flexSlider" class="flexslider" >
-            <ul class="slides">
-               <li><img src="{% static 'images/slider-1.jpg' %}" alt="home page slider1" title="Image 1 description"></li>
-               <li><img src="{% static 'images/slider-2.webp' %}" alt="home page slider2" title="Image 2 description"></li>
-               <li> <img src="{% static 'images/slider-3.jpg' %}" alt="home page slider3" title="Image 3 description"></li>
-               <li> <img src="{% static 'images/slider-4.jpg' %}" alt="home page slide4" title="Image 4 description"></li>
-            </ul>
-         </div>
-      </section>
-      <div class="wrapper" id="skipCont"></div>
-      <!--/#skipCont-->
-      <section id="fontSize" class="wrapper body-wrapper ">
-         <h2 style="display: none;">Body</h2>
-         <div class="bg-wrapper top-bg-wrapper gray-bg padding-top-bott">
-            <div class="container common-container four_content body-container top-body-container padding-top-bott2">
-               <div class="minister clearfix">
-                  <div class="minister-box clearfix">
-                     <div class="minister-sub1">
-                        <div class="minister-image"><img src="{% static 'theme/images/prime-minister.jpg' %}" alt="Hon’ble Minister" title="Ministry/Department, Minister Name"></div>
-                        <div class="min-info">
-                           <h4><a href="#" title="Minister Name">Minister Name</a></h4>
-                           <h5 class="prime"><a href="#" title="Hon’ble Prime Minister">Hon’ble Minister</a></h5>
-                           <a href="#" title="External link open in new tab,Portfolio of Hon’ble minister"  target="_blank" class="portgolio-button">
-                           View Portfolio <i class="fa fa-external-link"></i>
-                           </a>                           
-                        </div>
-                     </div>
-                     <div class="minister-sub">
-                        <div class="minister-image"><img src="{% static 'theme/images/minister1.jpg' %}" alt="Hon’ble Minister" title="Ministry/Department,Minister Name"></div>
-                        <div class="min-info">
-                           <h4>Minister Name</h4>
-                           <h5><a href="#" title="Minister of Coal"><span>Ministry/Department</span> Name</a></h5>
-                        </div>
-                     </div>
-                     <div class="minister-sub">
-                        <div class="minister-image"><img src="{% static 'theme/images/minister2.jpg' %}" alt="minister of state coal and mines" title="Ministry/Department, Minister Name"></div>
-                        <div class="min-info">
-                           <h4>Minister Name</h4>
-                           <h5><a href="#" title="Minister of State"><span>Ministry/Department</span>
-                              NAme</a>
-                           </h5>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="banner-content-wrapper">
-                  <h2>Welcome to <span>Chhattisgarh State Gauseva Aayog</span></h2>
-                  <p class="banner-title-tag-line">Welcome to the Chhattisgarh State Gauseva Aayog</p>
-                  <p class="banner-content"> An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.
-                     An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.
-                  </p>
-                  <a href="#" title="Click here to know more">Read more ></a>
-               </div>
-            </div>
-         </div>
-         <div class="wrapper home-banner">
-            <div class="container common-container four_content banner-container body-container top-body-container">
-               
-               <div class="left-block">
-                  <div class="left-col-2">
-                     <div class="page-tab clearfix">
-                        <div class="page-tab-res clearfix">
-                           <div id="parentHorizontalTab">
-                              <ul class="resp-tabs-list hor_1">
-                                 <li><a href="#" id="tab-list-1"> Whats's New</a></li>
-                                 <li><a href="#">Press Release</a></li>
-                              </ul>
-                              <div class="resp-tabs-container hor_1" >                           
-                                 <div class="clearfix" id="hor_1_tab_item-0">
-                                    <div class="content-wrapper">
-                                       <p class="text-slide pause" onclick="changeClass()"></p>
-                                       <div class="scroll-text scroll-left">
-                                          <ul class="list">
-                                             <li>                                                
-                                                <div class="list-content">Description of Whats's New 1 goes here - File type (size) DD-MM-YYYY.</div>
-                                             </li>
-                                             <li>                                                
-                                                <div class="list-content">Description of Whats's New 2 goes here - File type (size) DD-MM-YYYY.</div>
-                                             </li>
-                                             <li>                                                
-                                                <div class="list-content">Description of Whats's New 3 goes here - File type (size) DD-MM-YYYY.</div>
-                                             </li>
-                                             <li><div class="list-content">Description of Whats's New 4 goes here - File type (size) DD-MM-YYYY.</div></li>
-                                          </ul>
-                                       </div>
-                                       <div class="view-footer"><a href="/mpa/media/whats-new" title="Read More"><span>Read More ></span></a></div>
-                                    </div>
-                                 </div>
-                                 <div class="clearfix" id="hor_1_tab_item-1">
-                                    <div class="content-wrapper">
-                                       <p class="text-slide01 pause" onclick="changeClass01()"></p>
-                                       <div class="scroll-text01 scroll-left">
-                                          <ul class="list">
-                                             <li>
-                                                <div class="list-content">Description of Press Release 1 goes here mm-dd-yyyy - File type (size) DD-MM-YYYY. </div>
-                                             </li>
-                                             <li>
-                                                <div class="list-content">Description of Press Release 2 goes here mm-dd-yyyy - File type (size) DD-MM-YYYY.</div>
-                                             </li>
-                                             <li>
-                                                <div class="list-content">Description of Press Release 3 goes here mm-dd-yyyy - File type (size) DD-MM-YYYY.</div>
-                                             </li>
-                                             <li><div class="list-content">Description of Press Release 4 goes here mm-dd-yyyy - File type (size) DD-MM-YYYY.</div></li>
-                                          </ul>
-                                       </div>
-                                       <div class="view-footer"><a href="/mpa/media/whats-new" title="Read More"><span>Read More ></span></a></div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="left-col-2">
-                     <h2>Tenders</h2>
-                     <p class="text-slide1 pause" onclick="changeClass1()"></p>
-                     <div class="scroll-text-1 scroll-left">
-                        <ul class="list">
-                           <li>
-                              <div class="date"><span>DD</span><em>MM YYYY</em></div>
-                              <div class="list-content">Description of Tenders 1 goes here - File type (size).</div>
-                           </li>
-                           <li>
-                              <div class="date"><span>DD</span><em>MM YYYY</em></div>
-                              <div class="list-content">Description of Tenders 2 goes here - File type (size).</div>
-                           </li>
-                           <li>
-                              <div class="date"><span>DD</span><em>MM YYYY</em></div>
-                              <div class="list-content">Description of Tenders 3 goes here - File type (size).</div>
-                           </li>
-                        </ul>
-                     </div>
-                     <div class="view-footer"><a href="/mpa/media/whats-new" title="Know More About Tenders"><span>View all Tenders ></span></a></div>
-                  </div>
-               </div>
-               <div class="banner-right-wrapper">
-                  <div class="banner-box-wrapper">
-                     <div class="banner-box banner-box-1">
-                        <div class="banner-box-content">
-                           <h2>External Link 1</h2>
-                           <a href="#" title="External link that opens in new tab" target="_blank">
-                              <p>Sub-heading</p>
-                              <i class="fa fa-external-link"></i>                
-                           </a>
-                        </div>
-                     </div>
-                     <div class="banner-box banner-box-2">
-                        <div class="banner-box-content">
-                           <h2>External Link 2</h2>
-                           <a href="#" title="External link that opens in new tab" target="_blank">
-                              <p>Sub-heading</p>
-                              <i class="fa fa-external-link"> </i>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="banner-box banner-box-3">
-                        <div class="banner-box-content">
-                           <h2>External Link 3</h2>
-                           <a href="#" title="External link that opens in new tab" target="_blank">
-                              <p>Sub-heading</p>
-                              <i class="fa fa-external-link"></i>                
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="wrapper home-btm-slider">
-            <div class="container common-container four_content gallery-container">
-               <div class="gallery-area clearfix">
-                  <div class="gallery-heading">
-                     <h3>Photo Gallery</h3>
-                     <a class="bttn-more bttn-view" href="#" title="View all Photo Gallery"><span>View All</span></a> 
-                  </div>
-                  <div class="gallery-holder">
-                     <div id="galleryCarousel" class="flexslider">
-                        <ul class="slides">
-                           <li data-thumb="{% static 'theme/images/crousal/1.jpg' %}" data-thumb-alt="Slide 1">
-                              <img src="{% static 'theme/images/crousal/1.jpg' %}" alt="gallery2" title="Slide 1"/>
-                           </li>
-                           <li data-thumb="{% static 'theme/images/crousal/1.jpg' %}" data-thumb-alt="Slide 2">
-                              <img src="{% static 'theme/images/crousal/1.jpg' %}" alt="gallery1" title="Slide 2"/>
-                           </li>
-                           <li data-thumb="{% static 'theme/images/crousal/1.jpg' %}" data-thumb-alt="Slide 3">
-                              <img src="{% static 'theme/images/crousal/1.jpg' %}" alt="gallery3" title="Slide 3"/>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <div class="gallery-right">
-                  <div class="video-heading">
-                     <h3>Video Gallery</h3>
-                     <a class="bttn-more bttn-view" href="#" title="View all Video Gallery"><span>View All</span></a> 
-                  </div>
-                  <div class="video-wrapper">
-                     <video src="#" poster="{% static 'theme/images/' %}" title="The Union Minister for Railways and Coal, Shri Piyush Goyal addressing a press conference on Neyveli Lignite Corporation.">
-                        <span>Your browser does not support HTML5 video.</span>
-                     </video>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!--/.body-wrapper-->
+
+      {% block content %}{% endblock content %}
+
       <!--/.banner-wrapper-->
       <section class="wrapper carousel-wrapper">
          <h2 style="display: none;">Carousel</h2>
@@ -532,5 +337,8 @@
       <script src="{% static 'assets/js/megamenu.js' %}"></script>
       <script src="{% static 'theme/js/easyResponsiveTabs.js' %}"></script>
       <script src="{% static 'theme/js/custom.js' %}"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+
+      {% block js %}{% endblock js %}
    </body>
 </html>

@@ -5,7 +5,7 @@ from .views import *
 
 urlpatterns = [
     # < ----------- Templates Render ----------- >
-    path('', TemplateView.as_view(template_name='base.html'), name = "homepage"),
+    path('', TemplateView.as_view(template_name='home.html'), name = "homepage"),
     path('student_login', TemplateView.as_view(template_name='student_login.html'), name = "student-login"),
     path('student_registration', TemplateView.as_view(template_name='student_registration.html'), name = "student-registration"),
     path('student/<str:student_id>/profile/', StudentProfileView.as_view(), name='user_profile'),
